@@ -1,9 +1,11 @@
 package be.intecbrussel.sellers;
 
+import be.intecbrussel.eatables.Magnum;
+
 public class PriceList {
-    double ballPrice;	        // de prijs van een bolletje voor Cone
-    double rocketPrice;	        // de prijs van IceRocket
-    double magnumStandardPrice;	// het basis prijs van Magnum
+    double ballPrice;            // de prijs van een bolletje voor Cone
+    double rocketPrice;            // de prijs van IceRocket
+    double magnumStandardPrice;    // het basis prijs van Magnum
 
     public PriceList() {
     }
@@ -34,11 +36,21 @@ public class PriceList {
         return rocketPrice;
     }
 
-//    De getmagnumprice methode zal aan de hand van een gegeven MagnumType en een algemeen
-//    opgegeven magnumStandardPrice teruggeven wat de prijs van zo’n magnum zal zijn.
-//    Bv: Een alpinenuts magnum zal 1.5 keer de prijs zijn van een standaard magnum.
-    public double getMagnumPrice() {
-        return magnumStandardPrice;
-        //return magnumStandardPrice * coefficient;
+    public double getMagnumPrice(Magnum.MagnumType type) {
+        switch (type) {
+            case ALPINENUTS -> {
+                return magnumStandardPrice * 1.5;
+            }
+            case MILKCHOCOLATE,
+                 WHITECHOCOLATE,
+                 BLACKCHOCOLATE,
+                 ROMANTICSTRAWBERRIES -> {
+                return magnumStandardPrice * 2;
+            }
+            default -> {
+                return magnumStandardPrice;
+            }
+        }
+
     }
 }
