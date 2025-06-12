@@ -6,8 +6,8 @@ import be.intecbrussel.eatables.Magnum;
 
 public class IceCreamSalon implements IceCreamSeller {
 
-    private PriceList priceList;                    // object van PriceList
-    private double totalProfit;
+    private final PriceList priceList;                    // object van PriceList
+    private double totalProfit = 0.0;
 
     public IceCreamSalon(PriceList priceList) {     // constructor krijgt object van PriceList
         this.priceList = priceList;
@@ -15,27 +15,33 @@ public class IceCreamSalon implements IceCreamSeller {
 
     @Override
     public double getProfit() {
-        return 0;
+        return totalProfit;
     }
 
     @Override
     public Cone orderCone(Cone.Flavor[] flavors) {
         Cone cone = new Cone(flavors);                              // nieuwe object van Cone aanmaken
 
-        double cost = flavors.length * priceList.getBallPrice();    // bereken de prijs van één ijsje (aantal ball * price)
-        totalProfit += cost;                                        // tel de totale profit
+        double pricePerBall = priceList.getBallPrice();             // de prijs per bal krijgen
+        totalProfit += flavors.length * pricePerBall;               // de prijs van hele ijsje berekenen (aantal ball * price) en resultaat toevoegen in totale profit
 
-        return cone;                                                // return nieuwe object van Cone
+        return cone;                                                // nieuwe object van Cone teruggeven
     }
 
     @Override
     public IceRocket orderIceRocket() {
-        return null;
+        double rocketPrice = priceList.getRocketPrice();            // de prijs krijgen
+        totalProfit += rocketPrice;                                 // de prijs van rocketje in totale profit toevoegen
+
+        return new IceRocket();                                     // nieuwe object aanmaken en teruggeven
     }
 
     @Override
     public Magnum orderMagnum(Magnum.MagnumType type) {
-        return null;
+        double magnumPrice = priceList.getMagnumPrice(type);        // de prijs krijgen
+        totalProfit += magnumPrice;                                 // de prijs van magnumtje in totale profit toevoegen
+
+        return new Magnum(type);                                    // nieuwe object aanmaken en teruggeven
     }
 
     @Override

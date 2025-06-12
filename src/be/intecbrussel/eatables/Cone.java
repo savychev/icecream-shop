@@ -29,6 +29,7 @@ public class Cone implements Eatable {
             for (Flavor flavor : balls) {
                 System.out.print(flavor + " ");
             }
+            System.out.println();   // lege regel
         } catch (NullPointerException e) {
             System.err.println("Array 'balls' is empty\n" + e.getMessage());
         }
