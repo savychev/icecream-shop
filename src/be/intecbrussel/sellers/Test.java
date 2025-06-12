@@ -16,11 +16,14 @@ public class Test {
         rocket2.eat();                                              // +2
         System.out.println("Totale profit: " + salon.getProfit());  // 4
 
+        System.out.println();
 
         Cone.Flavor[] flavors = {Cone.Flavor.VANILLA, Cone.Flavor.BANANA};
         Cone cone = salon.orderCone(flavors);
         cone.eat();                                                 // +3 (twee balletjes)
         System.out.println("Totale profit: " + salon.getProfit());  // 7
+
+        System.out.println();
 
         Magnum magnum1 = salon.orderMagnum(Magnum.MagnumType.MILKCHOCOLATE);
         magnum1.eat();                                              // +2.5 (standarte prijs)
@@ -33,6 +36,13 @@ public class Test {
         Magnum magnum3 = salon.orderMagnum(Magnum.MagnumType.ROMANTICSTRAWBERRIES);
         magnum3.eat();                                              // +5 (2.5 * 2 (kef))
         System.out.println("Totale profit: " + salon.getProfit());  // 18.25
+
+        System.out.println();
+
+        Stock stock = new Stock(5,6,2,5);
+        System.out.println(stock.getRockets());                     // 2
+        stock.takeRockets(1);
+        System.out.println(stock.getRockets());                     // 1
 
 
     }
