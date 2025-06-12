@@ -25,15 +25,15 @@ public class Cone implements Eatable {
     @Override
     public void eat() {
         System.out.print("Eating a cone with: ");
-        try {
-            for (Flavor flavor : balls) {
-                System.out.print(flavor + " ");
-            }
-            System.out.println();   // lege regel
-        } catch (NullPointerException e) {
-            System.err.println("Array 'balls' is empty\n" + e.getMessage());
+        if (balls == null) {
+            System.err.println("Array 'balls' is empty");
+            return;
         }
 
+        for (Flavor flavor : balls) {
+            System.out.print(flavor + " ");
+        }
+        System.out.println();   // lege regel
     }
 
     public Flavor[] getBalls() {

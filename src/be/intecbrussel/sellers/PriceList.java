@@ -3,9 +3,9 @@ package be.intecbrussel.sellers;
 import be.intecbrussel.eatables.Magnum;
 
 public class PriceList {
-    double ballPrice;            // de prijs van een bolletje voor Cone
-    double rocketPrice;            // de prijs van IceRocket
-    double magnumStandardPrice;    // het basis prijs van Magnum
+    private double ballPrice;            // de prijs van een bolletje voor Cone
+    private double rocketPrice;            // de prijs van IceRocket
+    private double magnumStandardPrice;    // het basis prijs van Magnum
 
     public PriceList() {
     }
