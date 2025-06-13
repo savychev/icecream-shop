@@ -25,7 +25,7 @@ public class Cone implements Eatable {
     @Override
     public void eat() {
         System.out.print("Eating a cone with: ");
-        if (balls == null) {
+        if (balls == null || balls.length == 0) {
             System.err.println("Array 'balls' is empty");
             return;
         }
