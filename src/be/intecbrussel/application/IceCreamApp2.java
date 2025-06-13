@@ -24,6 +24,7 @@ public class IceCreamApp2 {
             };
         } catch (NoMoreIceCreamException e) {
             System.out.println(e.getMessage());
+            order = new Eatable[0];          // voorkomt NullPointerException
         }
 
         // alles opeten
