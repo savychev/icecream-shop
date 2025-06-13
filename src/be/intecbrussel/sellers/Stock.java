@@ -45,19 +45,18 @@ public class Stock {
         this.magnums = magnums;
     }
 
-
-//    public void takeCones(int amount) {
-//        cones -= amount;
-//    }
-//    public void takeBalls(int amount) {
-//        balls -= amount;
-//    }
-//    public void takeRockets(int amount) {
-//        rockets -= amount;
-//    }
-//    public void takeMagnums(int amount) {
-//        magnums -= amount;
-//    }
+    public void takeCones(int amount) {
+        cones -= amount;
+    }
+    public void takeBalls(int amount) {
+        balls -= amount;
+    }
+    public void takeRockets(int amount) {
+        rockets -= amount;
+    }
+    public void takeMagnums(int amount) {
+        magnums -= amount;
+    }
 
 
 }

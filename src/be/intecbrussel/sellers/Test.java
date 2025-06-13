@@ -41,7 +41,7 @@ public class Test {
 
         Stock stock = new Stock(5,6,2,5);
         System.out.println(stock.getRockets());                     // 2
-        stock.takeRockets(1);
+//        stock.takeRockets(1);
         System.out.println(stock.getRockets());                     // 1
 
 
