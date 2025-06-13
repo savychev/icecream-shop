@@ -19,6 +19,9 @@ public class IceCreamCar implements IceCreamSeller {
         if (stock.getCones() < 1 || stock.getBalls() < flavors.length) {    // controle op de bechikbaarheid van hoorntjes en ijsbollen
             throw new NoMoreIceCreamException("Er zijn geen hoorntjes meer beschikbaar.");
         }
+        double pricePerBall = priceList.getBallPrice();                     // de prijs per bal krijgen
+        totalProfit += flavors.length * pricePerBall;                       // de prijs van hele ijsje berekenen (aantal ball * price) en resultaat toevoegen in totale profit
+
         return prepareCone(flavors);                                        // prepare-methode aanroepen
     }
 
