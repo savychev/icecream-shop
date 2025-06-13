@@ -18,9 +18,9 @@ public class IceCreamApp2 {
             order = new Eatable[]{
                     car.orderIceRocket(),                                                                                 // 1.5
                     car.orderIceRocket(),                                                                                 // exeption
-                    car.orderCone(new Cone.Flavor[]{Cone.Flavor.STRAWBERRY, Cone.Flavor.LEMON}),                          // 1.5
-                    car.orderCone(new Cone.Flavor[]{Cone.Flavor.BANANA, Cone.Flavor.CHOCOLATE, Cone.Flavor.PISTACHE}),    // 2.25
-                    car.orderMagnum(Magnum.MagnumType.ALPINENUTS)                                                         // 3.75 == 2.5 (standard prijs) * 1.5 (kef)
+                    car.orderCone(new Cone.Flavor[]{Cone.Flavor.STRAWBERRY, Cone.Flavor.LEMON}),
+                    car.orderCone(new Cone.Flavor[]{Cone.Flavor.BANANA, Cone.Flavor.CHOCOLATE, Cone.Flavor.PISTACHE}),
+                    car.orderMagnum(Magnum.MagnumType.ALPINENUTS)
             };
         } catch (NoMoreIceCreamException e) {
             System.out.println(e.getMessage());
