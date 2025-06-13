@@ -20,12 +20,11 @@ public class IceCreamSalon implements IceCreamSeller {
 
     @Override
     public Cone orderCone(Cone.Flavor[] flavors) {
-        Cone cone = new Cone(flavors);                              // nieuwe object van Cone aanmaken
 
         double pricePerBall = priceList.getBallPrice();             // de prijs per bal krijgen
         totalProfit += flavors.length * pricePerBall;               // de prijs van hele ijsje berekenen (aantal ball * price) en resultaat toevoegen in totale profit
 
-        return cone;                                                // nieuwe object van Cone teruggeven
+        return new Cone(flavors);                                   // nieuwe object van Cone aanmaken en teruggeven
     }
 
     @Override
