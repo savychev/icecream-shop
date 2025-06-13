@@ -17,7 +17,7 @@ public class IceCreamApp2 {
             // bestellingen plaatsen
             order = new Eatable[]{
                     car.orderIceRocket(),                                                                                 // 1.5
-                    car.orderIceRocket(),                                                                                 // 1.5
+                    car.orderIceRocket(),                                                                                 // exeption
                     car.orderCone(new Cone.Flavor[]{Cone.Flavor.STRAWBERRY, Cone.Flavor.LEMON}),                          // 1.5
                     car.orderCone(new Cone.Flavor[]{Cone.Flavor.BANANA, Cone.Flavor.CHOCOLATE, Cone.Flavor.PISTACHE}),    // 2.25
                     car.orderMagnum(Magnum.MagnumType.ALPINENUTS)                                                         // 3.75 == 2.5 (standard prijs) * 1.5 (kef)
