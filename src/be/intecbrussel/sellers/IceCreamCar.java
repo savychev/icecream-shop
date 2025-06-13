@@ -5,8 +5,8 @@ import be.intecbrussel.eatables.IceRocket;
 import be.intecbrussel.eatables.Magnum;
 
 public class IceCreamCar implements IceCreamSeller {
-    private PriceList priceList;
-    private Stock stock;
+    private final PriceList priceList;
+    private final Stock stock;
     private double totalProfit = 0.0;
 
     public IceCreamCar(PriceList priceList, Stock stock) {
@@ -16,10 +16,10 @@ public class IceCreamCar implements IceCreamSeller {
 
     @Override
     public Cone orderCone(Cone.Flavor[] flavors) {
-        if (stock.getCones() < 1 || stock.getBalls() < flavors.length) {    // check if
+        if (stock.getCones() < 1 || stock.getBalls() < flavors.length) {    // controle op de bechikbaarheid van hoorntjes en ijsbollen
             throw new NoMoreIceCreamException("Er zijn geen hoorntjes meer beschikbaar.");
         }
-        return prepareCone(flavors);
+        return prepareCone(flavors);                                        // prepare-methode aanroepen
     }
 
     public Cone prepareCone(Cone.Flavor[] flavors) {
