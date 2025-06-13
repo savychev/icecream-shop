@@ -29,6 +29,22 @@ public class Stock {
         return magnums;
     }
 
+    public void setCones(int cones) {
+        this.cones = cones;
+    }
+
+    public void setBalls(int balls) {
+        this.balls = balls;
+    }
+
+    public void setRockets(int rockets) {
+        this.rockets = rockets;
+    }
+
+    public void setMagnums(int magnums) {
+        this.magnums = magnums;
+    }
+
     public void takeCones(int amount) {
         cones -= amount;
     }
@@ -41,4 +57,6 @@ public class Stock {
     public void takeMagnums(int amount) {
         magnums -= amount;
     }
+
+
 }
